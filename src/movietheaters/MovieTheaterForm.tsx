@@ -22,35 +22,37 @@ export default function MovieTheaterForm(props: movieTheaterForm) {
 	}
 
 	return (
-		<Formik
-			initialValues={props.model}
-			onSubmit={props.onSubmit}
-			validationSchema={Yup.object({
-				name: Yup.string()
-					.required("This field is required")
-					.firstLetterUppercase(),
-			})}>
-			{(formikProps) => (
-				<Form>
-					<TextField displayName="Name" field="name" />
+		<div className="theater_map">
+			<Formik
+				initialValues={props.model}
+				onSubmit={props.onSubmit}
+				validationSchema={Yup.object({
+					name: Yup.string()
+						.required("This field is required")
+						.firstLetterUppercase(),
+				})}>
+				{(formikProps) => (
+					<Form>
+						<TextField displayName="Name" field="name" />
 
-					<div style={{ marginBottom: "1rem" }} className="theater_map">
-						<MapField
-							latField="latitude"
-							lngField="longitude"
-							coordinates={transformCoordinates()}
-						/>
-					</div>
+						<div style={{ marginBottom: "1rem" }} className="theater_map">
+							<MapField
+								latField="latitude"
+								lngField="longitude"
+								coordinates={transformCoordinates()}
+							/>
+						</div>
 
-					<Button disabled={formikProps.isSubmitting} type="submit">
-						Guardar Cambios
-					</Button>
-					<Link className="btn btn-secondary" to="/movietheaters">
-						Cancel
-					</Link>
-				</Form>
-			)}
-		</Formik>
+						<Button disabled={formikProps.isSubmitting} type="submit">
+							Guardar Cambios
+						</Button>
+						<Link className="btn btn-secondary" to="/movietheaters">
+							Cancel
+						</Link>
+					</Form>
+				)}
+			</Formik>
+		</div>
 	);
 }
 
