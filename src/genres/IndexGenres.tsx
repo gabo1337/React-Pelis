@@ -15,8 +15,8 @@ export default function IndexGenres() {
 						<>
 							<thead>
 								<tr>
-									<th>Name</th>
-									<th></th>
+									<th scope="col">Nombre</th>
+									<th scope="col"></th>
 								</tr>
 							</thead>
 							<tbody>
