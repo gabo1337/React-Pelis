@@ -15,15 +15,15 @@ export default function IndexGenres() {
 						<>
 							<thead>
 								<tr>
-									<th></th>
 									<th>Name</th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
 								{genres?.map((genre) => (
 									<tr key={genre.id}>
-										<td>{buttons(`genres/edit/${genre.id}`, genre.id)}</td>
 										<td>{genre.name}</td>
+										<td>{buttons(`genres/edit/${genre.id}`, genre.id)}</td>
 									</tr>
 								))}
 							</tbody>

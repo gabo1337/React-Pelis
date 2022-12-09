@@ -1,11 +1,11 @@
-.genre {
+.actor {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	background-color: #111111;
 }
 
-.genre_container {
+.actor_container {
 	min-height: 95vh;
 	padding-top: 150px;
 	width: 1200px;
@@ -16,7 +16,7 @@
 	margin-bottom: 200px;
 }
 
-.genre_title {
+.actor_title {
 	font-size: 30px;
 	font-weight: 800;
 	color: rgb(239 68 68);
