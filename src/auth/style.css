@@ -1,0 +1,8 @@
+.body_container {
+	min-height: 100vh;
+	background-color: #111111;
+	padding-top: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

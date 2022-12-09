@@ -3,85 +3,79 @@ import { Link, NavLink } from "react-router-dom";
 import AuthenticationContext from "./auth/AuthenticationContext";
 import Authorized from "./auth/Authorized";
 import { logout } from "./auth/handleJWT";
-import Button from './utils/Button';
+import Button from "./utils/Button";
+import "./nav_style.css";
+import { logo } from "./assets";
 
 export default function Menu() {
+	const { update, claims } = useContext(AuthenticationContext);
 
-    const {update, claims} = useContext(AuthenticationContext);
+	function getUserEmail(): string {
+		return claims.filter((x) => x.name === "email")[0]?.value;
+	}
 
-    function getUserEmail(): string {
-        return claims.filter(x => x.name === "email")[0]?.value;
-    }
-
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-            <div className="container-fluid">
-                <NavLink className="navbar-brand" to="/">React Movies</NavLink>
-                <div className="collapse navbar-collapse"
-                  style={{display: 'flex', justifyContent: 'space-between'}}
-                >
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/movies/filter">
-                                Filtrar Peliculas
-                            </NavLink>
-                        </li>
-                        <Authorized
-                            role="admin"
-                            authorized={<>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/genres">
-                                        Generos
-                                    </NavLink>
-                                </li>
-
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/actors">
-                                        Actores
-                                    </NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/movietheaters">
-                                       Salas de Cine
-                                    </NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/movies/create">
-                                        Crear Peliculas
-                                    </NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/users">
-                                        Usuarios
-                                    </NavLink>
-                                </li>
-                            </>}
-                        />
-
-                       
-                    </ul>
-                    <div className="d-flex">
-                            <Authorized 
-                                authorized={<>
-                                    <span className="nav-link">Hello, {getUserEmail()}</span>
-                                    <Button
-                                    onClick={() => {
-                                        logout();
-                                        update([]);
-                                    }}
-                                    className="nav-link btn btn-link"
-                                    >Log out</Button>
-                                </>}
-                                notAuthorized={<>
-                                    <Link to="/register" 
-                                    className="nav-link btn btn-link">Register</Link>
-                                    <Link to="/login" 
-                                    className="nav-link btn btn-link">Login</Link>
-                                </>}
-                            />
-                        </div>
-                </div>
-            </div>
-        </nav>
-    )
+	return (
+		<nav className="r_nav">
+			<div className="content">
+				<div className="logo">
+					<img
+						className="logo_icon"
+						src={logo}
+						alt="logo"
+						width={50}
+						height={50}
+					/>
+					<NavLink className="logo_title" to="/">
+						React Movies
+					</NavLink>
+				</div>
+				<Authorized
+					role="admin"
+					authorized={
+						<div className="options">
+							<li>
+								<NavLink to="/genres">Generos</NavLink>
+							</li>
+							<li>
+								<NavLink to="/actors">Actores</NavLink>
+							</li>
+							<li>
+								<NavLink to="/movietheaters">Salas de Cine</NavLink>
+							</li>
+							<li>
+								<NavLink to="/movies/create">Crear Peliculas</NavLink>
+							</li>
+							<li>
+								<NavLink to="/users">Usuarios</NavLink>
+							</li>
+						</div>
+					}
+				/>
+				<Authorized
+					authorized={
+						<>
+							<span>Hello, {getUserEmail()}</span>
+							<Button
+								onClick={() => {
+									logout();
+									update([]);
+								}}>
+								Log out
+							</Button>
+						</>
+					}
+					notAuthorized={
+						<div className="options">
+							<Link to="/register" className="options_item_register">
+								Register
+							</Link>
+							<Link to="/login" className="options_item_login">
+								Login
+							</Link>
+						</div>
+					}
+				/>
+			</div>
+		</nav>
+	);
 }
