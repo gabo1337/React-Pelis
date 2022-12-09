@@ -25,10 +25,7 @@ export default function IndividualMovie(props: movieDTO) {
 				<div data-category="designing development">
 					<div className="gallery-box card">
 						<div className="gallery-container">
-							<a
-								className="image-popup"
-								href="assets/images/small/img-1.jpg"
-								title="">
+							<a className="image-popup" href={buildLink()} title="">
 								<Link to={buildLink()}>
 									<img alt="Poster" src={props.poster} />
 								</Link>
