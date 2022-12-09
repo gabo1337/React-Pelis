@@ -29,3 +29,18 @@
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 1.5rem;
 }
+
+.theater_map {
+	width: 100%;
+}
+
+.movie_title {
+	color: white;
+}
+
+.movie_tags {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 20px;
+}

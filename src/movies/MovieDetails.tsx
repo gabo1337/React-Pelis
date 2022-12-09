@@ -66,22 +66,26 @@ export default function MovieDetails() {
 				<h2 className="movie_title">
 					{movie.title} ({movie.releaseDate.getFullYear()})
 				</h2>
-				{movie.genres?.map((genre) => (
-					<Link
-						key={genre.id}
-						style={{ marginRight: "5px" }}
-						className="btn btn-primary btn-sm rounded-pill"
-						to={`/movies/filter?genreId=${genre.id}`}>
-						{genre.name}
-					</Link>
-				))}{" "}
-				| {movie.releaseDate.toDateString()}| Tu voto:{" "}
-				<Ratings
-					maximumValue={5}
-					selectedValue={movie.userVote}
-					onChange={handleRate}
-				/>{" "}
-				| Voto Promedio: {movie.averageVote}
+				<div className="movie_tags">
+					{movie.genres?.map((genre) => (
+						<Link
+							key={genre.id}
+							style={{ marginRight: "5px" }}
+							className="btn btn-primary btn-sm rounded-pill"
+							to={`/movies/filter?genreId=${genre.id}`}>
+							{genre.name}
+						</Link>
+					))}
+					| {movie.releaseDate.toDateString()}| Tu voto:{" "}
+				</div>
+				<div className="movie_tags">
+					<Ratings
+						maximumValue={5}
+						selectedValue={movie.userVote}
+						onChange={handleRate}
+					/>
+					| Voto Promedio: {movie.averageVote}
+				</div>
 				<div style={{ display: "flex", marginTop: "1rem" }}>
 					<span style={{ display: "inline-block", marginRight: "1rem" }}>
 						<img
@@ -113,7 +117,7 @@ export default function MovieDetails() {
 				) : null}
 				{movie.actors && movie.actors.length > 0 ? (
 					<div style={{ marginTop: "1rem" }}>
-						<h3>Actores</h3>
+						<h3 className="movie_title">Actores</h3>
 						<div style={{ display: "flex", flexDirection: "column" }}>
 							{movie.actors?.map((actor) => (
 								<div key={actor.id} style={{ marginBottom: "2px" }}>
@@ -127,6 +131,7 @@ export default function MovieDetails() {
 											display: "inline-block",
 											width: "200px",
 											marginLeft: "1rem",
+											color: "white",
 										}}>
 										{actor.name}
 									</span>
@@ -134,6 +139,7 @@ export default function MovieDetails() {
 										style={{
 											display: "inline-block",
 											width: "45px",
+											color: "white",
 										}}>
 										...
 									</span>
@@ -144,8 +150,8 @@ export default function MovieDetails() {
 					</div>
 				) : null}
 				{movie.movieTheaters && movie.movieTheaters.length > 0 ? (
-					<div>
-						<h2>Showing on</h2>
+					<div className="theater_map">
+						<h2 className="movie_title">Showing on</h2>
 						<Map coordinates={transformCoordinates()} readOnly={true} />
 					</div>
 				) : null}
