@@ -5,6 +5,7 @@ import TextField from "../forms/TextField";
 import Button from "../utils/Button";
 import { Link } from "react-router-dom";
 import "./style.css";
+import { logo } from "../assets";
 
 export default function AuthForm(props: authFormProps) {
 	return (
@@ -18,20 +19,31 @@ export default function AuthForm(props: authFormProps) {
 				password: Yup.string().required("Este campo es requerido"),
 			})}>
 			{(formikProps) => (
-				<Form>
-					<TextField displayName="Email" field="email" />
-					<TextField
-						displayName="Contraseña"
-						field="password"
-						type="password"
-					/>
-					<Button disabled={formikProps.isSubmitting} type="submit">
-						Login
-					</Button>
-					<Link className="btn btn-secondary" to="/">
-						Cancelar
-					</Link>
-				</Form>
+				<div className="auth_form_container">
+					<div className="logo_head">
+						<img src={logo} alt="logo" width={120} height={120} />
+						<h2 className="logo_head_title">{props.title}</h2>
+					</div>
+					<Form>
+						<TextField displayName="Email" field="email" />
+						<TextField
+							displayName="Contraseña"
+							field="password"
+							type="password"
+						/>
+						<div className="bottom_section">
+							<Button
+								className="bottom_login"
+								disabled={formikProps.isSubmitting}
+								type="submit">
+								{props.button}
+							</Button>
+							<Link className="bottom_cancel" to="/">
+								Cancelar
+							</Link>
+						</div>
+					</Form>
+				</div>
 			)}
 		</Formik>
 	);
@@ -43,4 +55,6 @@ interface authFormProps {
 		values: userCredentials,
 		actions: FormikHelpers<userCredentials>
 	): void;
+	title: String;
+	button: String;
 }

@@ -34,7 +34,7 @@
 }
 
 .logo_title:hover {
-	color: red;
+	color: rgb(239 68 68);
 	transition-duration: 300ms;
 }
 

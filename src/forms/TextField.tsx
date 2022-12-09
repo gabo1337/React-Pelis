@@ -5,12 +5,14 @@ import "./styles.css";
 export default function TextField(props: textFieldProps) {
 	return (
 		<div className="mb-3">
-			<label htmlFor={props.field}>{props.displayName}</label>
+			<label htmlFor={props.field} className="label_form">
+				{props.displayName}
+			</label>
 			<Field
 				type={props.type}
 				name={props.field}
 				id={props.field}
-				className="form-control label_form"
+				className="form-control "
 			/>
 			<ErrorMessage name={props.field}>
 				{(msg) => <div className="text-danger">{msg}</div>}

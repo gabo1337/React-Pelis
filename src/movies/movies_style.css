@@ -1,0 +1,32 @@
+.movie {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: #111111;
+}
+
+.movie_container {
+	min-height: 95vh;
+	padding-top: 100px;
+	width: 1200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: aliceblue;
+	margin-bottom: 200px;
+}
+
+.movie_title {
+	font-size: 30px;
+	font-weight: 800;
+	color: rgb(239 68 68);
+	margin-top: 3.5rem;
+	margin-bottom: 3.5rem;
+}
+
+.movie_grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.5rem;
+}

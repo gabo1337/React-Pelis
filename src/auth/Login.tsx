@@ -34,7 +34,10 @@ export default function Login() {
 			<AuthForm
 				model={{ email: "", password: "" }}
 				onSubmit={async (values) => await login(values)}
+				title="Ingresa con una cuenta"
+				button="Login"
 			/>
+			<DisplayErrors errors={errors} />
 		</div>
 	);
 }

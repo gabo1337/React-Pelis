@@ -8,6 +8,7 @@ import { claim } from "./auth/auth.models";
 import AuthenticationContext from "./auth/AuthenticationContext";
 import { getClaims } from "./auth/handleJWT";
 import configureInterceptor from "./utils/httpInterceptors";
+import Footer from "./Footer";
 
 configureValidations();
 configureInterceptor();
@@ -51,11 +52,7 @@ function App() {
 						</Route>
 					))}
 				</Switch>
-				<footer className="bd-footer py-5 mt-5 bg-light">
-					<div className="container">
-						React Movies {new Date().getFullYear().toString()}
-					</div>
-				</footer>
+				<Footer />
 			</AuthenticationContext.Provider>
 		</BrowserRouter>
 	);
