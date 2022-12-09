@@ -29,40 +29,54 @@ export default function Menu() {
 						React Movies
 					</NavLink>
 				</div>
+
 				<Authorized
 					role="admin"
 					authorized={
 						<div className="options">
-							<li>
-								<NavLink to="/genres">Generos</NavLink>
-							</li>
-							<li>
-								<NavLink to="/actors">Actores</NavLink>
-							</li>
-							<li>
-								<NavLink to="/movietheaters">Salas de Cine</NavLink>
-							</li>
-							<li>
-								<NavLink to="/movies/create">Crear Peliculas</NavLink>
-							</li>
-							<li>
-								<NavLink to="/users">Usuarios</NavLink>
-							</li>
+							<div className="options_auth">
+								<div>
+									<NavLink to="/genres" className="option_item">
+										Generos
+									</NavLink>
+								</div>
+								<div className="option_item">
+									<NavLink to="/actors" className="option_item">
+										Actores
+									</NavLink>
+								</div>
+								<div className="option_item">
+									<NavLink to="/movietheaters" className="option_item">
+										Salas de Cine
+									</NavLink>
+								</div>
+								<div className="option_item">
+									<NavLink to="/movies/create" className="option_item">
+										Crear Peliculas
+									</NavLink>
+								</div>
+								<div className="option_item">
+									<NavLink to="/users" className="option_item">
+										Usuarios
+									</NavLink>
+								</div>
+							</div>
 						</div>
 					}
 				/>
 				<Authorized
 					authorized={
-						<>
-							<span>Hello, {getUserEmail()}</span>
+						<div className="options">
+							<span className="">Hello, {getUserEmail()}</span>
 							<Button
+								className="options_item_logout"
 								onClick={() => {
 									logout();
 									update([]);
 								}}>
 								Log out
 							</Button>
-						</>
+						</div>
 					}
 					notAuthorized={
 						<div className="options">

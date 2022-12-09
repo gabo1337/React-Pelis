@@ -29,7 +29,7 @@ export default function LandingPage() {
 					<h1 className="movie_title">En cines</h1>
 					<MoviesList movies={movies.inTheaters} />
 
-					<h3>Proximamente</h3>
+					<h1 className="movie_title">Proximamente</h1>
 					<MoviesList movies={movies.upcomingReleases} />
 				</div>
 			</div>
