@@ -1,0 +1,25 @@
+.genre {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: #111111;
+}
+
+.genre_container {
+	min-height: 95vh;
+	padding-top: 150px;
+	width: 1500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-bottom: 200px;
+}
+
+.genre_title {
+	font-size: 30px;
+	font-weight: 800;
+	color: rgb(239 68 68);
+	margin-top: 3.5rem;
+	margin-bottom: 3.5rem;
+}
