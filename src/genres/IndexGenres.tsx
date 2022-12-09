@@ -1,6 +1,7 @@
 import { urlGenres } from "../endpoints";
 import IndexEntity from "../utils/IndexEntity";
 import { genreDTO } from "./genres.model";
+import "./styles.css";
 
 export default function IndexGenres() {
 	return (

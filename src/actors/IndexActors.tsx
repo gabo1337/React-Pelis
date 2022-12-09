@@ -1,7 +1,7 @@
 import { urlActors } from "../endpoints";
 import IndexEntity from "../utils/IndexEntity";
 import { actorDTO } from "./actors.model";
-import axios from "axios";
+import "./styles.css";
 
 export default function IndexActors() {
 	return (

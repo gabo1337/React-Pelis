@@ -6,6 +6,7 @@ import RecordsPerPageSelect from "./RecordsPerPageSelect";
 import Pagination from "./Pagination";
 import GenericList from "./GenericList";
 import customConfirm from "./customConfirm";
+import "./utils_styles.css";
 
 export default function IndexEntity<T>(props: indexEntityProps<T>) {
 	const [entities, setEntities] = useState<T[]>();
@@ -59,8 +60,8 @@ export default function IndexEntity<T>(props: indexEntityProps<T>) {
 	);
 
 	return (
-		<div>
-			<h3>{props.title}</h3>
+		<div className="table_list">
+			<h3 className="table_list_titulo">{props.title}</h3>
 
 			{props.createURL ? (
 				<Link
