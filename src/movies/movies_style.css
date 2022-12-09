@@ -14,6 +14,7 @@
 	justify-content: center;
 	flex-direction: column;
 	margin-bottom: 200px;
+	color: white;
 }
 
 .movie_title {
@@ -34,7 +35,7 @@
 	width: 100%;
 }
 
-.movie_title {
+.movie_title_details {
 	color: white;
 }
 
@@ -43,4 +44,17 @@
 	flex-direction: row;
 	justify-content: space-between;
 	gap: 20px;
+	margin-bottom: 25px;
+}
+
+.movie_details_actor_img {
+	border-radius: 100%;
+}
+
+.movie_details_actor_tag {
+	border-radius: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 7px;
+	padding-bottom: 7px;
 }

@@ -31,13 +31,13 @@ export default function IndexUsers() {
 	return (
 		<div className="users">
 			<div className="users_container">
-				<IndexEntity<userDTO> title="Users" url={`${urlAccounts}/listUsers`}>
+				<IndexEntity<userDTO> title="Usuarios" url={`${urlAccounts}/listUsers`}>
 					{(users) => (
 						<>
 							<thead>
 								<tr>
-									<th></th>
 									<th>Email</th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -54,7 +54,7 @@ export default function IndexUsers() {
 														"Guardar"
 													)
 												}>
-												Crear Admin
+												Crear
 											</Button>
 
 											<Button
@@ -66,7 +66,7 @@ export default function IndexUsers() {
 														"Guardar"
 													)
 												}>
-												Eliminar Admin
+												Eliminar
 											</Button>
 										</td>
 									</tr>

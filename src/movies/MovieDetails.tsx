@@ -76,8 +76,8 @@ export default function MovieDetails() {
 							{genre.name}
 						</Link>
 					))}
-					| {movie.releaseDate.toDateString()}| Tu voto:{" "}
 				</div>
+				{movie.releaseDate.toDateString()}| Tu voto:
 				<div className="movie_tags">
 					<Ratings
 						maximumValue={5}
@@ -117,13 +117,17 @@ export default function MovieDetails() {
 				) : null}
 				{movie.actors && movie.actors.length > 0 ? (
 					<div style={{ marginTop: "1rem" }}>
-						<h3 className="movie_title">Actores</h3>
+						<h3 className="movie_title_details">Actores</h3>
 						<div style={{ display: "flex", flexDirection: "column" }}>
 							{movie.actors?.map((actor) => (
-								<div key={actor.id} style={{ marginBottom: "2px" }}>
+								<div
+									className="movie_details_actor_tag"
+									key={actor.id}
+									style={{ marginBottom: "2px" }}>
 									<img
 										alt="pic"
 										src={actor.picture}
+										className="movie_details_actor_img"
 										style={{ width: "50px", verticalAlign: "middle" }}
 									/>
 									<span
@@ -151,7 +155,7 @@ export default function MovieDetails() {
 				) : null}
 				{movie.movieTheaters && movie.movieTheaters.length > 0 ? (
 					<div className="theater_map">
-						<h2 className="movie_title">Showing on</h2>
+						<h2 className="movie_title_details">Miralo en:</h2>
 						<Map coordinates={transformCoordinates()} readOnly={true} />
 					</div>
 				) : null}
