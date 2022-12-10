@@ -64,10 +64,13 @@ export default function Menu() {
 						</div>
 					}
 				/>
+
 				<Authorized
 					authorized={
 						<div className="options">
-							<span className="">Hello, {getUserEmail()}</span>
+							<span className=" options_tag_name">
+								Hello, <b>{getUserEmail()}</b>
+							</span>
 							<Button
 								className="options_item_logout"
 								onClick={() => {

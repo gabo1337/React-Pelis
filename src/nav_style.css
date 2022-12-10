@@ -6,6 +6,15 @@
 	width: 100%;
 	background-color: #111111;
 	z-index: 1000;
+	box-shadow: -2px 0px 26px 4px rgba(0, 0, 0, 0.59);
+	-webkit-box-shadow: -2px 0px 26px 4px rgba(0, 0, 0, 0.59);
+	-moz-box-shadow: -2px 0px 26px 4px rgba(0, 0, 0, 0.59);
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border: 2px;
+	border-color: red;
+	padding-top: 3px;
+	padding-bottom: 3px;
 }
 
 .content {
@@ -110,4 +119,13 @@
 	font-weight: 550;
 	color: white;
 	transition-duration: 300ms;
+}
+
+.options_tag_name {
+	background-color: rgb(52, 161, 52);
+	border-radius: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
