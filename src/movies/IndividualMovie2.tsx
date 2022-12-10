@@ -25,10 +25,11 @@ const IndividualMovie2 = (props: movieDTO) => {
 			<div className="movie_card_body">
 				<img src={props.poster} alt="logo" className="movie_card_image" />
 				<div className="movie_card_container">
-					<span className="movie_card_tag">{props.genres[0]}</span>{" "}
+					<span className="movie_card_tag">{props.genres[0]}</span>
 					<h4 className="movie_card_title">{props.title}</h4>
-					<p className="movie_card_time">{props.releaseDate.getFullYear()}</p>
-					<p className="movie_card_time">{props.releaseDate}</p>
+					<p className="movie_card_time">
+						{new Date(props.releaseDate).toDateString}
+					</p>
 				</div>
 				<Authorized
 					role="admin"

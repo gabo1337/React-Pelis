@@ -41,7 +41,7 @@ export default function LandingPage() {
 				loadData();
 			}}>
 			<div className="movie">
-				<div className="movie_container">
+				<div className="movie_container_landing">
 					<h1 className="movie_title">En cines</h1>
 					<MoviesList movies={movies.inTheaters} />
 
