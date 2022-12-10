@@ -23,11 +23,11 @@ const IndividualMovie2 = (props: movieDTO) => {
 	return (
 		<a className="image-popup" href={buildLink()} title="">
 			<div className="movie_card_body">
-				<img src={testMovie} alt="logo" className="movie_card_image" />
+				<img src={props.poster} alt="logo" className="movie_card_image" />
 				<div className="movie_card_container">
-					<span className="movie_card_tag">Comedia</span>{" "}
-					<h4 className="movie_card_title">Super Cool</h4>
-					<p className="movie_card_time">Miercoles 20 de Agosto 2022</p>
+					<span className="movie_card_tag">{props.genres[0]}</span>{" "}
+					<h4 className="movie_card_title">{props.title}</h4>
+					<p className="movie_card_time">{props.releaseDate.toDateString()}</p>
 				</div>
 				<Authorized
 					role="admin"
