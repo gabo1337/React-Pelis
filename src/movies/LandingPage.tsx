@@ -20,21 +20,6 @@ export default function LandingPage() {
 		});
 	}
 
-	const testMovie: movieDTO = {
-		title: "Guren lagan",
-		id: 50,
-		poster:
-			"https://cdnx.jumpseller.com/pockettomarket/image/22797379/Tengen-Toppa-gurren-Lagann-Funimation-dqwd.jpg.jpg?1647807547",
-		inTheaters: false,
-		trailer: "",
-		releaseDate: new Date(),
-		genres: [],
-		movieTheaters: [],
-		actors: [],
-		userVote: 0,
-		averageVote: 0,
-	};
-
 	return (
 		<AlertContext.Provider
 			value={() => {

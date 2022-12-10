@@ -21,6 +21,7 @@ export default function MovieDetails() {
 			.then((response: AxiosResponse<movieDTO>) => {
 				response.data.releaseDate = new Date(response.data.releaseDate);
 				setMovie(response.data);
+				console.log(movie);
 			});
 	}, [id]);
 
